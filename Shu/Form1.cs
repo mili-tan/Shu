@@ -29,10 +29,7 @@ namespace Shu
             {
                 try
                 {
-                    foreach (var item in strList)
-                    {
-                        textBox2.Text += item[i];
-                    }
+                    foreach (var item in strList) textBox2.Text += item[i];
                 }
                 catch (Exception exception)
                 {
