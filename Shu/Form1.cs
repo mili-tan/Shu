@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Shu
@@ -27,16 +22,7 @@ namespace Shu
 
             for (int i = 0; i < 5; i++)
             {
-                try
-                {
-                    foreach (var item in strList) textBox2.Text += item[i];
-                }
-                catch (Exception exception)
-                {
-                    Console.WriteLine(exception);
-                    //throw;
-                }
-
+                foreach (var item in strList.Where(item => item.Count > i)) textBox2.Text += item[i];
                 textBox2.Text += Environment.NewLine;
             }
         }
