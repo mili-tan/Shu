@@ -16,15 +16,21 @@ namespace Shu
         {
             textBox2.Clear();
 
-            var textChars = textBox1.Text.ToCharArray().ToList();
+            var textChars = textBox1.Text.Replace(Environment.NewLine,"").ToCharArray().ToList();
             var strList = new List<List<char>>();
-            for (int i = 0; i < textChars.Count; i += 5) strList.Add(textChars.Skip(i).Take(5).ToList());
+            var val = Convert.ToInt32(numericUpDown1.Value);
+            for (int i = 0; i < textChars.Count; i += val) strList.Add(textChars.Skip(i).Take(val).ToList());
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < val; i++)
             {
                 foreach (var item in strList.Where(item => item.Count > i)) textBox2.Text += item[i];
                 textBox2.Text += Environment.NewLine;
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
