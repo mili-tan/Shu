@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 
 namespace Shu
@@ -16,6 +17,7 @@ namespace Shu
         private void button1_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
+            if (checkBoxSBC.Checked) textBox1.Text = ToSBC(textBox1.Text);
 
             var textChars = textBox1.Text.Replace(Environment.NewLine,"").Replace(" ", "").ToCharArray().ToList();
             var strList = new List<List<char>>();
@@ -27,7 +29,7 @@ namespace Shu
                 foreach (var item in strList.Where(item => item.Count > i))
                 {
                     textBox2.Text += item[i];
-                    if (Spaces.Checked) textBox2.Text += @" ";
+                    if (Spaces.Checked) textBox2.Text += comboBox.Text;
                 }
 
                 textBox2.Text += Environment.NewLine;
@@ -41,14 +43,19 @@ namespace Shu
 
         private void FontSong_CheckedChanged(object sender, EventArgs e)
         {
-            if (FontSong.Checked)
+            Font = FontSong.Checked ? new Font("宋体",9) : new Font("微软雅黑", 7);
+        }
+
+        public static string ToSBC(string input)
+        {
+            char[] c = input.ToCharArray();
+            for (int i = 0; i < c.Length; i++)
             {
-                Font = new Font("宋体",9);
+                if (c[i] == 32) c[i] = (char) 12288;
+                else { if (c[i] < 127) c[i] = (char) (c[i] + 65248); }
             }
-            else
-            {
-                Font = new Font("微软雅黑", 7);
-            }
+
+            return new string(c);
         }
     }
 }

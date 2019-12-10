@@ -34,6 +34,8 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Spaces = new System.Windows.Forms.CheckBox();
             this.FontSong = new System.Windows.Forms.CheckBox();
+            this.comboBox = new System.Windows.Forms.ComboBox();
+            this.checkBoxSBC = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,7 +99,7 @@
             this.Spaces.Name = "Spaces";
             this.Spaces.Size = new System.Drawing.Size(78, 21);
             this.Spaces.TabIndex = 4;
-            this.Spaces.Text = "添加空格";
+            this.Spaces.Text = "添加分隔";
             this.Spaces.UseVisualStyleBackColor = true;
             // 
             // FontSong
@@ -113,11 +115,44 @@
             this.FontSong.UseVisualStyleBackColor = true;
             this.FontSong.CheckedChanged += new System.EventHandler(this.FontSong_CheckedChanged);
             // 
+            // comboBox
+            // 
+            this.comboBox.FormattingEnabled = true;
+            this.comboBox.Items.AddRange(new object[] {
+            " ",
+            "|",
+            " · ",
+            " | ",
+            "/",
+            "\\",
+            "、"});
+            this.comboBox.Location = new System.Drawing.Point(222, 194);
+            this.comboBox.Name = "comboBox";
+            this.comboBox.Size = new System.Drawing.Size(51, 25);
+            this.comboBox.TabIndex = 6;
+            this.comboBox.Text = " ";
+            // 
+            // checkBoxSBC
+            // 
+            this.checkBoxSBC.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxSBC.AutoSize = true;
+            this.checkBoxSBC.Checked = true;
+            this.checkBoxSBC.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSBC.Font = new System.Drawing.Font("微软雅黑", 7F);
+            this.checkBoxSBC.Location = new System.Drawing.Point(481, 197);
+            this.checkBoxSBC.Name = "checkBoxSBC";
+            this.checkBoxSBC.Size = new System.Drawing.Size(78, 21);
+            this.checkBoxSBC.TabIndex = 7;
+            this.checkBoxSBC.Text = "转到全角";
+            this.checkBoxSBC.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 510);
+            this.Controls.Add(this.checkBoxSBC);
+            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.FontSong);
             this.Controls.Add(this.Spaces);
             this.Controls.Add(this.numericUpDown1);
@@ -143,6 +178,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox Spaces;
         private System.Windows.Forms.CheckBox FontSong;
+        private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.CheckBox checkBoxSBC;
     }
 }
 
