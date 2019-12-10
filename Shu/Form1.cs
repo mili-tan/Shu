@@ -29,21 +29,16 @@ namespace Shu
                 foreach (var item in strList.Where(item => item.Count > i))
                 {
                     textBox2.Text += item[i];
-                    if (Spaces.Checked) textBox2.Text += comboBox.Text;
+                    if (checkBoxSpaces.Checked) textBox2.Text += comboBox.Text;
                 }
 
                 textBox2.Text += Environment.NewLine;
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void FontSong_CheckedChanged(object sender, EventArgs e)
         {
-            Font = FontSong.Checked ? new Font("宋体",9) : new Font("微软雅黑", 7);
+            Font = checkBoxFontSong.Checked ? new Font("宋体",9) : new Font("微软雅黑", 7);
         }
 
         public static string ToSBC(string input)
