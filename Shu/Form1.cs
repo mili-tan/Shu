@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -36,6 +37,18 @@ namespace Shu
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FontSong_CheckedChanged(object sender, EventArgs e)
+        {
+            if (FontSong.Checked)
+            {
+                Font = new Font("宋体",9);
+            }
+            else
+            {
+                Font = new Font("微软雅黑", 7);
+            }
         }
     }
 }

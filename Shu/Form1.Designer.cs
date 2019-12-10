@@ -33,6 +33,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Spaces = new System.Windows.Forms.CheckBox();
+            this.FontSong = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,11 +100,25 @@
             this.Spaces.Text = "添加空格";
             this.Spaces.UseVisualStyleBackColor = true;
             // 
+            // FontSong
+            // 
+            this.FontSong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FontSong.AutoSize = true;
+            this.FontSong.Font = new System.Drawing.Font("宋体", 7F);
+            this.FontSong.Location = new System.Drawing.Point(565, 199);
+            this.FontSong.Name = "FontSong";
+            this.FontSong.Size = new System.Drawing.Size(51, 17);
+            this.FontSong.TabIndex = 5;
+            this.FontSong.Text = "宋体";
+            this.FontSong.UseVisualStyleBackColor = true;
+            this.FontSong.CheckedChanged += new System.EventHandler(this.FontSong_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 510);
+            this.Controls.Add(this.FontSong);
             this.Controls.Add(this.Spaces);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.textBox2);
@@ -127,6 +142,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.CheckBox Spaces;
+        private System.Windows.Forms.CheckBox FontSong;
     }
 }
 
