@@ -26,10 +26,7 @@ namespace Shu
                 foreach (var item in strList.Where(item => item.Count > i))
                 {
                     textBox2.Text += item[i];
-                    if (Spaces.Checked)
-                    {
-                        textBox2.Text += " ";
-                    }
+                    if (Spaces.Checked) textBox2.Text += @" ";
                 }
 
                 textBox2.Text += Environment.NewLine;
