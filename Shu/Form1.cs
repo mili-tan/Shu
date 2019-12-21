@@ -17,7 +17,7 @@ namespace Shu
         private void button1_Click(object sender, EventArgs e)
         {
             textBox2.Clear();
-            if (checkBoxSBC.Checked) textBox1.Text = ToSBC(textBox1.Text);
+            if (checkBoxSBC.Checked) textBox1.Text = ToSbc(textBox1.Text);
 
             var textChars = textBox1.Text.Replace(Environment.NewLine,"").Replace(" ", "").ToCharArray().ToList();
             var strList = new List<List<char>>();
@@ -41,7 +41,7 @@ namespace Shu
             Font = checkBoxFontSong.Checked ? new Font("宋体",9) : new Font("微软雅黑", 7);
         }
 
-        public static string ToSBC(string input)
+        public static string ToSbc(string input)
         {
             char[] c = input.ToCharArray();
             for (int i = 0; i < c.Length; i++)
